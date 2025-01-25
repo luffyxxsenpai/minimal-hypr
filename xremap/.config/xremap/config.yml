@@ -1,0 +1,6 @@
+modmap:
+  - name: capslock=ctrl
+    remap:
+      CapsLock: Ctrl_L 
+      Home: CapsLock
+      End: f

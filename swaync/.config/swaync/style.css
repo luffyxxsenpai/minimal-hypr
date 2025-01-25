@@ -1,0 +1,159 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+@define-color text            @foreground;
+@define-color bg              @color1;
+@define-color selected        @color6;
+@define-color hover           alpha(@selected, 0.2);
+
+* {
+    outline: none;
+    transition: 200ms;
+}
+
+/* General Styles */
+.control-center {
+    background: @background; /* Less transparent */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    border: 2px solid @selected;
+    border-radius: 10px;
+}
+
+/* Notification Row */
+.notification-row {
+    margin: 0;
+    padding: 0px;
+}
+
+.notification-row .notification-background .close-button {
+    background: @bg;
+    color: @text;
+    text-shadow: none;
+    box-shadow: none;
+    margin: 2px;
+    border: none;
+    border-radius: 50%;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.notification-row .notification-background .close-button:hover {
+    background: @hover;
+    transition: background 0.15s ease-in-out;
+}
+
+/* Notification Content */
+.notification-row .notification-background .notification {
+    background: @bg;
+    color: @text;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.notification-row .notification-background .notification .notification-action,
+.notification-row .notification-background .notification .notification-default-action {
+    color: @text;
+}
+
+.notification-row .notification-background .notification .notification-action:hover,
+.notification-row .notification-background .notification .notification-default-action:hover {
+    background: @hover;
+}
+
+/* Widgets */
+.widget-title {
+    color: @text;
+    margin: 15px;
+    font-size: 1.2rem;
+}
+
+.widget-dnd {
+    margin: 15px;
+    color: @text;
+}
+
+.widget-dnd > switch {
+    background: @bg;
+    border-radius: 12px;
+    padding: 2px;
+}
+
+.widget-dnd > switch:hover {
+    background: @hover;
+}
+
+.widget-dnd > switch:checked {
+    background: @selected;
+}
+
+.widget-dnd > switch slider {
+    background: @text;
+    border-radius: 12px;
+}
+
+/* Media Player Widget */
+@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
+.widget-mpris {
+    margin: 15px;
+}
+
+.widget-mpris .widget-mpris-player {
+    background-color: @mpris-album-art-overlay;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+.widget-mpris .widget-mpris-player .widget-mpris-title {
+    font-size: 16px;
+    color: @text;
+}
+
+.widget-mpris .widget-mpris-player .widget-mpris-subtitle {
+    font-size: 14px;
+    color: @text;
+}
+
+/* Buttons Grid */
+.widget-buttons-grid {
+    background-color: alpha(@color2, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: alpha(@color2, 0.5);
+    border-radius: 12px;
+    min-width: 45px;
+    color: @text;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @hover;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:active {
+    background: @selected;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: @selected;
+    color: @text;
+}
+
+/* Additional Fixes */
+.control-center-clear-all {
+    background: @bg;
+    color: @text;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.control-center-clear-all:hover {
+    background: @hover;
+}
+
+.control-center-clear-all:active {
+    background: @selected;
+}
+
