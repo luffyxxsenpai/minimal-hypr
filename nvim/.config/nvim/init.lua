@@ -50,3 +50,7 @@ vim.g.gruvbox_contrast_dark = "hard"   -- Optional: Gruvbox contrast for dark mo
 vim.keymap.set("n", "<leader>te", function() vim.cmd("colorscheme everforest") end, { desc = "Everforest Theme" })
 vim.keymap.set("n", "<leader>tg", function() vim.cmd("colorscheme gruvbox") end, { desc = "Gruvbox Theme" })
 
+-- toggle line wrap
+vim.api.nvim_set_keymap('n', '<leader>w', ':set wrap!<CR>', { noremap = true, silent = true })
+
+
