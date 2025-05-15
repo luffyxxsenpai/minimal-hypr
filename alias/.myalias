@@ -99,3 +99,12 @@ alias untar='tar -zxvf '
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
+
+## HARDWARE TEMP
+alias gputemp="awk '{print \$1/1000}' /sys/class/drm/card0/device/hwmon/hwmon1/temp1_input"
+alias cputemp="awk '{print \$1/1000}' /sys/class/hwmon/hwmon2/temp1_input"
+alias gpufan="cat /sys/class/drm/card0/device/hwmon/hwmon1/fan1_input"
+
+
+
+
