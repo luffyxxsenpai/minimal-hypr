@@ -61,3 +61,5 @@ bindkey '^[[1;5A' up-line-or-history    # Ctrl+Up (optional)
 bindkey '^[[1;5B' down-line-or-history  # Ctrl+Down (optional)
 
 fastfetch
+
+
