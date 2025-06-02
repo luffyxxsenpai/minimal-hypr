@@ -9,6 +9,7 @@ alias myip='curl icanhazip.com'
 
 alias hyprconf='nvim $HOME/.config/hypr/'
 alias waybarconf='nvim $HOME/.config/waybar/'
+alias fixtime='sudo timedatectl'
 
 ### ──────── DOCKER ALIASES ──────── ###
 alias d="docker"
