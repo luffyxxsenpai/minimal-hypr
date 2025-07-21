@@ -7,12 +7,9 @@
 
 
 ##  for xremap
-- `sudo gpasswd -a USER input`
-- `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/input.rules`
-- `lsmod | grep uinput`
-- add `uinput` to `/etc/modules-load.d/uinput.conf`
-- `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-input.rules`
-- Then reboot the machine.
+- run the `xremap.sh` script 
+- copy paste the config files 
+
 
 ## for pywal
 - install AUR= `python-pywal16`
