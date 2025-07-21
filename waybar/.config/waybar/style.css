@@ -1,70 +1,82 @@
 @import "/home/luffy/.cache/wal/colors-waybar.css";
 
-*, #workspaces button {
-    margin-left: 1px;
-    margin-right: 5px;
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+/* === Universal Styles === */
+* {
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
+/* === Waybar Window === */
 window#waybar {
     background: transparent;
+    margin: 6px 1px;
+    padding: 0;
 }
 
 window#waybar.hidden {
     opacity: 0.0;
 }
 
-window {
-    margin-top: 6px;
-    margin-bottom: 6px;
-    padding-left: 1px;
-    padding-right: 1px;
-    transition: none;
-    color: transparent;
-    background: transparent;
-}
-
-#custom-updates, #idle_inhibitor, #pulseaudio, #clock, #memory, #cpu, #tray, #battery, #custom-power, #backlight, #custom-launcher, #workspaces {
+/* === Module Styling (Global Modules) === */
+#custom-updates,
+#idle_inhibitor,
+#pulseaudio,
+#clock,
+#memory,
+#cpu,
+#tray,
+#battery,
+#custom-power,
+#backlight,
+#custom-launcher,
+#workspaces {
     color: @foreground;
-    background: @background;
-    border-radius: 13px;
     background-color: @background;
     border: 2px solid @border-module;
+    border-radius: 11px;
+    padding: 2px 4px;
+    margin: 0 4px;
 }
 
+/* === Launcher Specific Overrides === */
 #custom-launcher {
-    padding-right: 13px;
-    color: @foreground;
+    padding-right: 5px;
 }
 
+/* === Workspaces === */
 #workspaces {
-    padding: 0;
-    padding-left: 1ex;
-    padding-right: 1ex;
+    padding: 0 1ex;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 #workspaces button {
     all: initial;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 15px;
+    margin: 0 5px 0 1px;
+    padding: 2px 4px;
     border-radius: inherit;
-    padding: 0;
-}
-
-#workspaces button.active {
     color: @foreground;
-    background: @color4;
 }
 
+/* Active workspace */
+#workspaces button.active {
+    background-color: @color4;
+    color: @foreground;
+}
+
+/* Hovered workspace */
 #workspaces button:hover {
-    background: @color5;
+    background-color: @color5;
     color: @background;
 }
 
+/* Urgent workspace */
 #workspaces button.urgent {
-    background: @color1;
+    background-color: @color1;
+    color: @background;
 }
-

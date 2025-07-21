@@ -1,0 +1,68 @@
+@import "/home/luffy/.cache/wal/colors-waybar.css";
+
+*, #workspaces button {
+    margin-left: 1px;
+    margin-right: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 15px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.0;
+}
+window {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 1px;
+    padding-right: 1px;
+    transition: none;
+    background: transparent;
+}
+
+#custom-updates, #idle_inhibitor, #pulseaudio, #clock, #memory, #cpu, #tray, #battery, #custom-power, #backlight, #custom-launcher, #workspaces {
+    color: foreground;
+    background: @background;
+    border-radius: 13px;
+    background-color: @background;
+    border: 2px solid @border-module;
+}
+
+#custom-launcher {
+    padding-right: 0px;
+    color: @foreground;
+}
+
+#workspaces {
+    padding: 0;
+    padding-left: 1ex;
+    padding-right: 1ex;
+}
+
+#workspaces button {
+    all: initial;
+    border-radius: inherit;
+    padding: 0;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    background: @color4;
+}
+
+#workspaces button:hover {
+    background: @color5;
+    color: @background;
+}
+
+#workspaces button.urgent {
+    background: @color1;
+}
+

@@ -31,7 +31,7 @@
 
 	"tray": {
 		"icon-size": 14,
-		"spacing": 0,
+		"spacing": 8,
         "tooltip": false,
 	},
     "clock": {
@@ -66,7 +66,7 @@
       	"tooltip": false,
    },
     "custom/launcher": {
-        "format": " ",
+        "format": "",
         "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
         "tooltip": false
     },
