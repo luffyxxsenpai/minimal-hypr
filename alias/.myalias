@@ -3,7 +3,7 @@
 alias vi="nvim"
 alias v="nvim"
 alias addalias="nvim ~/.alias"
-
+alias rgb="openrgb -p ~/myopenrgb.orp"
 alias yo="tgpt"
 alias myip='curl icanhazip.com'
 
