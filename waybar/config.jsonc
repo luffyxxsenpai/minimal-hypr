@@ -4,7 +4,7 @@
 	"output": ["eDP-1","DP-1"],
 	"modules-left": ["custom/launcher","clock", "tray"],
     "modules-center": ["hyprland/workspaces"],
-	"modules-right": ["idle_inhibitor","custom/updates","pulseaudio", "pulseaudio#microphone", "backlight" ,"memory", "cpu", "battery", "custom/power"],
+	"modules-right": ["idle_inhibitor","custom/updates","pulseaudio#speaker", "pulseaudio#headphone", "pulseaudio#microphone", "backlight" ,"memory", "cpu", "battery", "custom/power"],
    
 
 
@@ -70,36 +70,41 @@
         "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
         "tooltip": false
     },
-    "pulseaudio": {
-        "scroll-step": 1,
-        "format": "{icon} {volume}",
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "󰸈",
-        "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "וֹ",
-            "headset": "  ",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["󰕿","󰖀","󰖀","󰕾","󰕾" ]
-        },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+"pulseaudio#headphone": {
+    "source": false,
+    "sink": "alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo",
+    "format": "{icon} {volume}",
+    "format-muted": "󰸈",
+    "format-icons": {
+        "default": ["󰕿","󰖀","󰖀","󰕾","󰕾"]
     },
+    "on-click": "pactl set-sink-mute alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo +2%",
+    "on-scroll-down": "pactl set-sink-volume alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo -2%"
+},
+
+"pulseaudio#speaker": {
+    "source": false,
+    "sink": "alsa_output.pci-0000_09_00.4.analog-stereo",
+    "format": "󰓃 {volume}",
+    "format-muted": "󰓄",
+    "on-click": "pactl set-sink-mute alsa_output.pci-0000_09_00.4.analog-stereo toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume alsa_output.pci-0000_09_00.4.analog-stereo +2%",
+    "on-scroll-down": "pactl set-sink-volume alsa_output.pci-0000_09_00.4.analog-stereo -2%"
+},
+
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": "󰍬 {volume}",
         "format-source-muted": "󰍭",
-        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click": "pactl set-source-mute alsa_input.usb-MV-SILICON_fifine_Microphone_20190808-00.mono-fallback toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-        "scroll-step": 5
+        "on-scroll-up": "pactl set-source-volume alsa_input.usb-MV-SILICON_fifine_Microphone_20190808-00.mono-fallback +2%",
+        "on-scroll-down": "pactl set-source-volume alsa_input.usb-MV-SILICON_fifine_Microphone_20190808-00.mono-fallback -2%",
     },
+
 
     "idle_inhibitor": {
         "format": "{icon}",

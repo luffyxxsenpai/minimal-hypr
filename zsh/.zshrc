@@ -12,7 +12,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # source alias
 source ~/.myalias 
-
 # Prompt
 eval "$(starship init zsh)"
 
