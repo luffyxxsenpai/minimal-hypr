@@ -4,7 +4,7 @@
 	"output": ["eDP-1","DP-1"],
 	"modules-left": ["custom/launcher","clock", "tray"],
     "modules-center": ["hyprland/workspaces"],
-	"modules-right": ["idle_inhibitor","custom/updates","pulseaudio#speaker", "pulseaudio#headphone", "pulseaudio#microphone", "backlight" ,"memory", "cpu", "battery", "custom/power"],
+	"modules-right": ["idle_inhibitor","custom/updates","pulseaudio#speaker" ,"pulseaudio#headphone", "pulseaudio#microphone", "backlight" ,"memory", "cpu", "battery", "custom/power"],
    
 
 
@@ -61,27 +61,29 @@
     },
 
     "custom/power": {
-      	"format":"⏻",
+      	"format":" ⏻ ",
        	"on-click": "wlogout",
       	"tooltip": false,
    },
     "custom/launcher": {
-        "format": "",
+        "format": " ",
         "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
         "tooltip": false
     },
+
+
 "pulseaudio#headphone": {
     "source": false,
-    "sink": "alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo",
+    "sink": "alsa_output.pci-0000_08_00.1.hdmi-stereo",
     "format": "{icon} {volume}",
     "format-muted": "󰸈",
     "format-icons": {
         "default": ["󰕿","󰖀","󰖀","󰕾","󰕾"]
     },
-    "on-click": "pactl set-sink-mute alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo toggle",
+    "on-click": "pactl set-sink-mute alsa_output.pci-0000_08_00.1.hdmi-stereo toggle",
     "on-click-right": "pavucontrol",
-    "on-scroll-up": "pactl set-sink-volume alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo +2%",
-    "on-scroll-down": "pactl set-sink-volume alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo -2%"
+    "on-scroll-up": "pactl set-sink-volume alsa_output.pci-0000_08_00.1.hdmi-stereo +2%",
+    "on-scroll-down": "pactl set-sink-volume alsa_output.pci-0000_08_00.1.hdmi-stereo -2%"
 },
 
 "pulseaudio#speaker": {
@@ -109,8 +111,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
        "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " " 
         },
 	"on-click-right": "kitty",
 	
@@ -119,34 +121,12 @@
        "format": "{} {icon}",
        "return-type": "json",
        "format-icons": {
-           "has-updates": "󱍷",
-           "updated": "󰂪",
+           "has-updates": "󱍷 ",
+           "updated": "󰂪 ",
         "interval": 7200,
        },
        "exec-if": "which waybar-module-pacman-updates",
        "exec": "waybar-module-pacman-updates",
        "on-click": "kitty -e sudo pacman -Syu"
    },
-    "backlight": {
-        "format": "{icon}{percent: >3}%",
-        "format-icons": [""],
-        "on-scroll-down": "brightnessctl -c backlight set 5%-",
-        "on-scroll-up": "brightnessctl -c backlight set +5%",
-        "on-click": "~/.config/waybar/scripts/2nd-monitor-brightness up",
-        "on-click-right": "~/.config/waybar/scripts/2nd-monitor-brightness down"
-
-    },
-    "battery": {
-        "states": {
-            "warning": 70,
-            "critical": 45
-        },
-        "format": "{icon} {capacity}% ",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
-
-    },
-
-
 }
