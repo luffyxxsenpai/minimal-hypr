@@ -62,3 +62,4 @@ bindkey '^[[1;5B' down-line-or-history  # Ctrl+Down (optional)
 fastfetch
 
 
+export PATH="$HOME/.npm-global/bin:$PATH"

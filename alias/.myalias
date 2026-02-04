@@ -1,5 +1,11 @@
 ### ──────────────── PERSONAL ALIASES ──────────────── ###
 
+## kei network
+alias kei-stop="sudo zerotier-cli leave 8056c2e21cbdd906"
+alias kei-start="sudo zerotier-cli join 8056c2e21cbdd906"
+alias zerolist="sudo zerotier-cli listnetworks"
+alias zerostatus="sudo zerotier-cli status"
+
 alias vi="nvim"
 alias v="nvim"
 alias addalias="nvim ~/.alias"
